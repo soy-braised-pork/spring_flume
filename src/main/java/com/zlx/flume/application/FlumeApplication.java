@@ -1,5 +1,6 @@
 package com.zlx.flume.application;
 
+import com.zlx.flume.apirest.model.FlumSendRequest;
 import com.zlx.flume.tools.MyRpcClientFacade;
 
 import java.util.ArrayList;
@@ -9,8 +10,8 @@ public class FlumeApplication {
 
     private final List<String> message = new ArrayList<>();
 
-    public void send(FlumeSendRequest r) {
-        MyRpcClientFacade clientFacade = new MyRpcClientFacader(r.getHost(), r.getPort);
+    public void send(FlumSendRequest r) {
+        MyRpcClientFacade clientFacade = new MyRpcClientFacade(r.getHost(), r.getPort());
 
         for (String message : r.getMessage()) {
             clientFacade.sendDataToFlume(message);

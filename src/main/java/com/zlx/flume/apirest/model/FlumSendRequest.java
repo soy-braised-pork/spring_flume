@@ -4,6 +4,7 @@ import java.util.List;
 
 public class FlumSendRequest {
 
+
     private String host;
     private int port;
     private List<String> message;
